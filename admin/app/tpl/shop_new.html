@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>ネオシステム ログイン</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-fonts@1.1.1/fonts/inter.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+
+<body>
+
+{include file="common_body_header.html"}
+
+
+<h3>店舗新規登録</h3>
+
+<form action="index.php" method="post">
+<input type="hidden" name="flow" value="shop_new">
+<input type="hidden" name="type" value="exec">
+
+<p>
+	<label>店舗名</label><br>
+	<input type="text" name="shop_name" value="">
+	<br>
+
+	<label>契約日 YYYY/MM/DD</label><br>
+	<input type="text" name="shop_name" value="">
+	<br>
+
+	<label>業種</label><br>
+	<select name="shop_category">
+	{foreach from=$categories item=c}
+		<option>{$c.shop_category_name|escape}</option>
+	{/foreach}
+	</select>
+	<br>
+
+	<label>エリア</label><br>
+	<select name="shop_category_large">
+		<option value="">-----</option>
+	{foreach from=$area_large item=a}
+		<option value="{$a.area_large_id|escape}">{$a.area_large_name|escape}エリア</option>
+	{/foreach}
+	</select>
+	<select name="shop_category_small">
+		<option>池袋</option>
+		<option>新宿</option>
+		<option>渋谷</option>
+	</select>
+	<br>
+
+	<label>ログインID</label><br>
+	<input type="text" name="login_id" value="">
+	<br>
+
+	<label>パスワード</label><br>
+	<input type="text" name="password" value="">
+	<br>
+
+	<label>契約日 YYYY/MM/DD</label><br>
+	<input type="text" name="contract_date" value="">
+	<br>
+
+	<label>キャッチコピー</label><br>
+	<input type="text" name="catch" value="">
+	<br>
+
+	<label>URL</label><br>
+	<input type="text" name="url" value="">
+	<br>
+
+	<label>電話番号</label><br>
+	<input type="text" name="tel" value="">
+	<br>
+
+	<label>LINE ID</label><br>
+	<input type="text" name="line_id" value="">
+	<br>
+
+	<label>詳細</label><br>
+	<textarea name="detail"></textarea>
+	<br>
+
+	<label>備考メモ</label><br>
+	<input type="text" name="seigen" value="">
+	<br>
+
+	<label>面接ストップ</label><br>
+	<input type="checkbox" name="id_stop" value="1">←面接ストップにする場合はチェック
+	<br>
+
+	<label>ラグゼ評価［情報提供料］</label><br>
+	<input type="text" name="assess_price" value="">
+	<br>
+
+	<label>ラグゼ評価［リピートの場合］</label><br>
+	<input type="text" name="assess_repeat" value="">
+	<br>
+
+	<label>ラグゼ評価［枝バック］</label><br>
+	<input type="text" name="assess_eda_back" value="">
+	<br>
+
+	<label>ラグゼ評価［集金日］</label><br>
+	<input type="text" name="assess_money" value="">
+	<br>
+
+</p>
+
+<p>
+	<button>登録</button>
+</p>
+
+</form>
+
+</body>
+</html>
